@@ -1,5 +1,3 @@
-/* eslint-disable react/no-multi-comp */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -15,6 +13,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import blue from '@material-ui/core/colors/blue';
+import TextField from '@material-ui/core/TextField';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 const styles = {
@@ -38,28 +37,35 @@ class SimpleDialog extends React.Component {
 
     return (
       <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-        <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+        <DialogTitle id="simple-dialog-title">Add a pet</DialogTitle>
         <div>
-          <List>
-            {emails.map(email => (
-              <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
-                <ListItemAvatar>
-                  <Avatar className={classes.avatar}>
-                    <PersonIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary={email} />
-              </ListItem>
-            ))}
-            <ListItem button onClick={() => this.handleListItemClick('addAccount')}>
-              <ListItemAvatar>
-                <Avatar>
-                  <AddIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="add account" />
-            </ListItem>
-          </List>
+					<form>
+						<TextField
+							id="Nom"
+							label="Nom"
+							margin="normal"
+						/>
+						<TextField
+							id="Type"
+							label="Type"
+							margin="normal"
+						/>
+						<TextField
+							id="Owner firstname"
+							label="Owner firstname"
+							margin="normal"
+						/>
+						<TextField
+							id="Owner lastname"
+							label="Owner lastname"
+							margin="normal"
+						/>
+						<TextField
+							id="Birthdate"
+							label="Birthdate"
+							margin="normal"
+						/>
+					</form>
         </div>
       </Dialog>
     );
