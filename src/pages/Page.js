@@ -13,7 +13,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import Vets from '../components/Vets.js';
+import Pets from '../components/Pets.js';
 
 const styles = theme => ({
   '@global': {
@@ -71,6 +74,8 @@ function Pricing(props) {
   const { classes } = props;
 
   return (
+
+  <Router>
     <React.Fragment>
       <CssBaseline />
       <AppBar position="static" color="default" className={classes.appBar}>
@@ -78,13 +83,19 @@ function Pricing(props) {
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
             Pet clinic
           </Typography>
-          <Button>Veterninarians</Button>
-          <Button>Animals</Button>
+					<Button component={Link} to="/Vets">
+						Vets
+					</Button>
+					<Button component={Link} to="/Pets">
+						Pets
+					</Button>
           <Button>Support</Button>
         </Toolbar>
       </AppBar>
       <main className={classes.layout, classes.main}>
-				<Vets className={classes.vets} />
+  <Route exact path='/' component={Vets}/>
+  <Route path='/Vets' component={Vets}/>
+  <Route path='/Pets' component={Pets}/>
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>
@@ -105,6 +116,7 @@ function Pricing(props) {
       </footer>
       {/* End footer */}
     </React.Fragment>
+  </Router>
   );
 }
 
