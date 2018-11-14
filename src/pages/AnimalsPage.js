@@ -13,7 +13,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-import Vets from '../components/Vets.js';
+import Pets from '../components/Pets.js';
 
 const styles = theme => ({
   '@global': {
@@ -84,7 +84,7 @@ function Pricing(props) {
         </Toolbar>
       </AppBar>
       <main className={classes.layout, classes.main}>
-				<Animals />
+				<Pets />
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>
