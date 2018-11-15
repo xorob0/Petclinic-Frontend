@@ -32,6 +32,10 @@ class SimpleDialog extends React.Component {
     this.props.onClose(value);
   };
 
+	handleSubmit = (e) => {
+		alert("test");
+	}
+
   render() {
     const { classes, onClose, selectedValue, ...other } = this.props;
 
@@ -39,7 +43,7 @@ class SimpleDialog extends React.Component {
       <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
         <DialogTitle id="simple-dialog-title">Add a pet</DialogTitle>
         <div>
-					<form>
+					<form onSubmit={this.handleSubmit}>
 						<TextField
 							id="Nom"
 							label="Nom"
@@ -65,6 +69,7 @@ class SimpleDialog extends React.Component {
 							label="Birthdate"
 							margin="normal"
 						/>
+						<button>Add</button>
 					</form>
         </div>
       </Dialog>
