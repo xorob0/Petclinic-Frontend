@@ -24,12 +24,29 @@ const styles = {
 };
 
 class SimpleDialog extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+			name : "",
+			type : "",
+			first : "",
+			last : "",
+			birth : "",
+    };
+  }
+
   handleClose = () => {
     this.props.onClose(this.props.selectedValue);
   };
 
   handleListItemClick = value => {
     this.props.onClose(value);
+  };
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
   };
 
 	handleSubmit = (e) => {
@@ -48,26 +65,36 @@ class SimpleDialog extends React.Component {
 							id="Nom"
 							label="Nom"
 							margin="normal"
+							value={this.state.name}
+							onChange={this.handleChange('name')}
 						/>
 						<TextField
 							id="Type"
 							label="Type"
 							margin="normal"
+							value={this.state.type}
+							onChange={this.handleChange('type')}
 						/>
 						<TextField
 							id="Owner firstname"
 							label="Owner firstname"
 							margin="normal"
+							value={this.state.first}
+							onChange={this.handleChange('first')}
 						/>
 						<TextField
 							id="Owner lastname"
 							label="Owner lastname"
 							margin="normal"
+							value={this.state.last}
+							onChange={this.handleChange('last')}
 						/>
 						<TextField
 							id="Birthdate"
 							label="Birthdate"
 							margin="normal"
+							value={this.state.birth}
+							onChange={this.handleChange('birth')}
 						/>
 						<button>Add</button>
 					</form>
