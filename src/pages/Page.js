@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Vets from '../components/Vets.js';
 import Pets from '../components/Pets.js';
+import Owners from '../components/Owners.js';
 import PetsForm from '../components/PetsForm.js';
 
 const styles = theme => ({
@@ -98,6 +99,7 @@ function Pricing(props) {
   <Route path='/Vets' component={Vets}/>
   <Route path='/Pets' component={Pets}/>
   <Route path='/Pets' component={PetsForm}/>
+  <Route path='/Owners' component={Owners}/>
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>
