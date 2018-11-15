@@ -67,7 +67,7 @@ const footers = [
   },
 ];
 
-function Pricing(props) {
+function Page(props) {
   const { classes } = props;
 
   return (
@@ -118,8 +118,8 @@ function Pricing(props) {
   );
 }
 
-Pricing.propTypes = {
+Page.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Pricing);
+export default withStyles(styles)(Page);
