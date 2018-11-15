@@ -1,29 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
-import blue from '@material-ui/core/colors/blue';
 import TextField from '@material-ui/core/TextField';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
-const styles = {
-  avatar: {
-    backgroundColor: blue[100],
-    color: blue[600],
-  },
-};
-
-class SimpleDialog extends React.Component {
+class AddPetsDialog extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -37,10 +18,6 @@ class SimpleDialog extends React.Component {
 
   handleClose = () => {
     this.props.onClose(this.props.selectedValue);
-  };
-
-  handleListItemClick = value => {
-    this.props.onClose(value);
   };
 
   handleChange = name => event => {
@@ -106,18 +83,9 @@ class SimpleDialog extends React.Component {
   }
 }
 
-SimpleDialog.propTypes = {
-  classes: PropTypes.object.isRequired,
-  onClose: PropTypes.func,
-  selectedValue: PropTypes.string,
-};
-
-const SimpleDialogWrapped = withStyles(styles)(SimpleDialog);
-
-class SimpleDialogDemo extends React.Component {
+class AddPetsDialogButton extends React.Component {
   state = {
     open: false,
-    selectedValue: emails[1],
   };
 
   handleClickOpen = () => {
@@ -127,17 +95,14 @@ class SimpleDialogDemo extends React.Component {
   };
 
   handleClose = value => {
-    this.setState({ selectedValue: value, open: false });
+    this.setState({ open: false });
   };
 
   render() {
     return (
       <div>
-        <Typography variant="subtitle1">Selected: {this.state.selectedValue}</Typography>
-        <br />
         <Button onClick={this.handleClickOpen}>Open simple dialog</Button>
-        <SimpleDialogWrapped
-          selectedValue={this.state.selectedValue}
+        <AddPetsDialog
           open={this.state.open}
           onClose={this.handleClose}
         />
@@ -146,4 +111,4 @@ class SimpleDialogDemo extends React.Component {
   }
 }
 
-export default SimpleDialogDemo;
+export default AddPetsDialogButton;
