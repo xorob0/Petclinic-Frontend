@@ -54,6 +54,7 @@ class SimpleDialog extends React.Component {
 		fetch(url);
 		alert(this.state.name + " was successfully added to the database");
 		e.preventDefault();
+		this.handleClose();
 	}
 
   render() {
