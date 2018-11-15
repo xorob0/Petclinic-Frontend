@@ -50,8 +50,9 @@ class SimpleDialog extends React.Component {
   };
 
 	handleSubmit = (e) => {
-		const url = "http://localhost:8080/api/v1/petInsert?type=" + this.state.type + "&name=" + this.state.name + "&ownerFirstname=" + this.state.first + "&ownerLastname=" + this.state.last + "&birthdate=2017-11-11";
+		const url = "http://localhost:8080/api/v1/petInsert?type=" + this.state.type + "&name=" + this.state.name + "&ownerFirstname=" + this.state.first + "&ownerLastname=" + this.state.last + "&birthdate=1932-11-11";
 		fetch(url);
+		alert(this.state.name + " was successfully added to the database");
 	}
 
   render() {
