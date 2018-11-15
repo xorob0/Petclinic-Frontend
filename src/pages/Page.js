@@ -3,10 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -72,7 +68,7 @@ const footers = [
   },
 ];
 
-function Pricing(props) {
+function Page(props) {
   const { classes } = props;
 
   return (
@@ -124,8 +120,8 @@ function Pricing(props) {
   );
 }
 
-Pricing.propTypes = {
+Page.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Pricing);
+export default withStyles(styles)(Page);
