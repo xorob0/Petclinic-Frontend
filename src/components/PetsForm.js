@@ -10,9 +10,9 @@ class AddPetsDialog extends React.Component {
     this.state = {
 			name : "",
 			type : "",
-			first : "",
-			last : "",
-			birth : "",
+			ownerFirtsname : "",
+			ownerLastname : "",
+			birthdate : "",
     };
   }
 
@@ -27,7 +27,7 @@ class AddPetsDialog extends React.Component {
   };
 
 	handleSubmit = (e) => {
-		const url = "http://localhost:8080/api/v1/petInsert?type=" + this.state.type + "&name=" + this.state.name + "&ownerFirstname=" + this.state.first + "&ownerLastname=" + this.state.last + "&birthdate=" + this.state.birth;
+		const url = "http://localhost:8080/api/v1/petInsert?type=" + this.state.type + "&name=" + this.state.name + "&ownerFirstname=" + this.state.ownerFirtsname + "&ownerLastname=" + this.state.ownerLastname + "&birthdate=" + this.state.birthdate;
 		fetch(url);
 		alert(this.state.name + " was successfully added to the database");
 	}
@@ -58,22 +58,22 @@ class AddPetsDialog extends React.Component {
 							id="Owner firstname"
 							label="Owner firstname"
 							margin="normal"
-							value={this.state.first}
-							onChange={this.handleChange('first')}
+							value={this.state.ownerFirtsname}
+							onChange={this.handleChange('ownerFirtsname')}
 						/>
 						<TextField
 							id="Owner lastname"
 							label="Owner lastname"
 							margin="normal"
-							value={this.state.last}
-							onChange={this.handleChange('last')}
+							value={this.state.ownerLastname}
+							onChange={this.handleChange('ownerLastname')}
 						/>
 						<TextField
 							id="Birthdate"
 							label="Birthdate"
 							margin="normal"
-							value={this.state.birth}
-							onChange={this.handleChange('birth')}
+							value={this.state.birthdate}
+							onChange={this.handleChange('birthdate')}
 						/>
 						<button>Add</button>
 					</form>
