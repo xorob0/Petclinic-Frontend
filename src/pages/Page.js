@@ -87,6 +87,9 @@ function Page(props) {
 					<Button component={Link} to="/Pets">
 						Pets
 					</Button>
+					<Button component={Link} to="/Owners">
+						Owners
+					</Button>
           <Button>Support</Button>
         </Toolbar>
       </AppBar>
