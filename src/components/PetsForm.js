@@ -27,7 +27,7 @@ class AddPetsDialog extends React.Component {
   };
 
 	handleSubmit = (e) => {
-		const url = "http://localhost:8080/api/v1/petInsert?type=" + this.state.type + "&name=" + this.state.name + "&ownerFirstname=" + this.state.ownerFirtsname + "&ownerLastname=" + this.state.ownerLastname + "&birthdate=" + this.state.birthdate;
+		const url = "http://localhost:9999/api/v1/petInsert?type=" + this.state.type + "&name=" + this.state.name + "&ownerFirstname=" + this.state.ownerFirtsname + "&ownerLastname=" + this.state.ownerLastname + "&birthdate=" + this.state.birthdate;
 		fetch(url);
 		alert(this.state.name + " was successfully added to the database");
 	}

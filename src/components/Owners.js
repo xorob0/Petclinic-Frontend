@@ -16,7 +16,7 @@ class Owners extends Component {
 
   componentWillMount() {
     var that = this;
-    const url = "http://localhost:8080/api/v1/owners";
+    const url = "http://localhost:9999/api/v1/owners";
 
     fetch(url)
       .then(function(response) {
