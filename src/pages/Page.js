@@ -24,6 +24,7 @@ const styles = theme => ({
   },
   appBar: {
     position: 'relative',
+    backgroundColor: '#00cc66'
   },
   toolbarTitle: {
     flex: 1,
@@ -79,7 +80,7 @@ function Page(props) {
       <AppBar position="static" color="default" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            Pet clinic
+            🐾 Pet clinic
           </Typography>
 					<Button component={Link} to="/Vets">
 						Vets
