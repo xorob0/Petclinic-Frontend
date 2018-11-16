@@ -13,7 +13,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Vets from '../components/Vets.js';
 import Pets from '../components/Pets.js';
-import PetsForm from '../components/PetsForm.js';
 import Owners from '../components/Owners.js';
 import OwnerForm from '../components/OwnerForm.js';
 
@@ -98,7 +97,6 @@ function Page(props) {
   <Route exact path='/' component={Vets}/>
   <Route path='/Vets' component={Vets}/>
   <Route path='/Pets' component={Pets}/>
-  <Route path='/Pets' component={PetsForm}/>
   <Route path='/Owners' component={Owners}/>
   <Route path='/Owners' component={OwnerForm}/>
       </main>
