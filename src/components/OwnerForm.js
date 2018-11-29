@@ -29,7 +29,7 @@ class AddOwnerDialog extends React.Component {
 	handleSubmit = (e) => {
 		const url = "http://localhost:9999/api/v1/ownerInsert?lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
 		fetch(url);
-		alert(this.state.name + " was successfully added to the database");
+		alert(this.state.firstname + " was successfully added to the database");
 	}
 
   render() {
