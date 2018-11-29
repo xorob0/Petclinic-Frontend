@@ -14,6 +14,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Vets from '../components/Vets.js';
 import Pets from '../components/Pets.js';
 import Owners from '../components/Owners.js';
+import Owner from '../components/Owner.js';
+import OwnerSPets from '../components/OwnerSPets.js';
 import OwnerForm from '../components/OwnerForm.js';
 
 const styles = theme => ({
@@ -100,6 +102,8 @@ function Page(props) {
   <Route path='/Pets' component={Pets}/>
   <Route path='/Owners' component={Owners}/>
   <Route path='/Owners' component={OwnerForm}/>
+  <Route path='/Owner/:id' component={Owner}/>
+	<Route path='/Owner/:id' component={OwnerSPets}/>
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>

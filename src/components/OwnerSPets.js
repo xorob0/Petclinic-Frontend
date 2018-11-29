@@ -9,9 +9,6 @@ import PropTypes from 'prop-types';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
-
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -146,7 +143,7 @@ class Pets extends Component {
 
   async componentDidMount() {
     var that = this;
-    const url = "http://localhost:9999/api/v1/pets";
+    const url = "http://localhost:9999/api/v1/pets?ownerId="+ this.props.match.params.id;
 
     fetch(url)
       .then(function(response) {
@@ -195,11 +192,7 @@ class Pets extends Component {
                       </TableCell>
                       <TableCell numeric>{n.type}</TableCell>
                       <TableCell numeric>{n.birthdate}</TableCell>
-											<TableCell numeric>
-												<Button component={Link} to={"/owner/" + n.ownerId}>
-													Owner
-												</Button>
-											</TableCell>
+											<TableCell numeric>{n.ownerId}</TableCell>
                     </TableRow>
                   );
                 })}
