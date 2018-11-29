@@ -115,6 +115,7 @@ class Owners extends Component {
   };
 
   handleClick = (event, id) => {
+		this.props.history.push("/owner/" + id);
   };
 
   handleChangePage = (event, page) => {
