@@ -62,8 +62,12 @@ class AddOwnerDialog extends React.Component {
 						<TextField
 							id="Birthdate"
 							label="Birthdate"
+							type="date"
 							margin="normal"
-							value={this.state.birthdate}
+							InputLabelProps={{
+								shrink: true,
+							}}
+							value={this.state.birthddate}
 							onChange={this.handleChange('birthdate')}
 						/>
 						<button>Add</button>
