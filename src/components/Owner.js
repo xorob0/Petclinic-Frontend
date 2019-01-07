@@ -6,6 +6,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class Owner extends Component {
   constructor() {
@@ -77,6 +78,7 @@ class Owner extends Component {
   render() {
     return (
 			<Paper>
+					<form onSubmit={this.handleSubmit}>
 						<TextField
 							id="Firstname"
 							label="Firstname"
@@ -112,6 +114,8 @@ class Owner extends Component {
 							value={this.state.telephone}
 							onChange={this.handleChange('phone')}
 						/>
+						<Button>Add</Button>
+					</form>
 				</Paper>
 
     );
