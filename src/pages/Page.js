@@ -22,6 +22,7 @@ import Vet from '../components/Vet.js';
 import Visit from '../components/Visit.js';
 import PetForm from '../components/PetForm.js';
 import VisitForm from '../components/VisitForm.js';
+import PetSVisits from '../components/PetSVisits.js';
 
 const styles = theme => ({
   '@global': {
@@ -111,6 +112,7 @@ function Page(props) {
 	<Route path='/Owner/:id' component={OwnerSPets}/>
 	<Route path='/Owner/:id' component={PetForm}/>
   <Route path='/Pet/:id' component={Pet}/>
+  <Route path='/Pet/:id' component={PetSVisits}/>
   <Route path='/Pet/:id' component={VisitForm}/>
   <Route path='/Vet/:id' component={Vet}/>
   <Route path='/Visit/:id' component={Visit}/>

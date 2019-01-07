@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import classNames from 'classnames';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
@@ -8,9 +9,11 @@ class AddOwnerDialog extends React.Component {
   constructor() {
     super();
     this.state = {
+			rows: [],
 			date : "",
 			description : "",
 			petId : 0,
+			vetId : 0,
     };
   }
 
@@ -25,14 +28,34 @@ class AddOwnerDialog extends React.Component {
   };
 
 	handleSubmit = (e) => {
-		const url = "http://localhost:9999/api/v1/visitInsert?date=" + this.state.date + "&description=" + this.state.description + "&petId=" + this.state.petId;
+		const url = "http://localhost:9999/api/v1/visitInsert?date=" + this.state.date + "&description=" + this.state.description + "&petId=" + this.state.petId + "&vetId=" + 1;
+		//TODO date picker
+		//TODO vetid
+		console.log(url);
 		fetch(url);
 		alert(this.state.description + " was successfully added to the database");
 	}
 
   componentWillMount() {
-    const PetId = this.props.petId;
+    const PetId = this.props.petid;
     this.setState({ petId: PetId });
+    var that = this;
+    const url = "http://localhost:9999/api/v1/vets";
+		var vets = [];
+
+    fetch(url)
+      .then(function(response) {
+        if (response.status >= 400) {
+          throw new Error("Bad response from server");
+        }
+        return response.json();
+      })
+      .then(function(data) {
+				data.map( vet => {
+					vets = [...vets, {value: vet.id, label: vet.lastname}]
+				})
+        that.setState({ rows: vets });
+      });
 }
 
   render() {
@@ -57,6 +80,21 @@ class AddOwnerDialog extends React.Component {
 							value={this.state.description}
 							onChange={this.handleChange('description')}
 						/>
+        <TextField
+          id="vet"
+          select
+          label="select"
+          value={this.state.vetId}
+          onChange={this.handleChange('vetId')}
+          helperText="Please select your vet"
+          margin="normal"
+        >
+          {this.state.rows.map(option => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </TextField>
 						<button>Add</button>
 					</form>
         </div>
@@ -87,7 +125,7 @@ class AddOwnerDialogButton extends React.Component {
         <AddOwnerDialog
           open={this.state.open}
           onClose={this.handleClose}
-					petId={this.props.match.params.id}
+					petid={this.props.match.params.id}
         />
       </div>
     );
