@@ -83,8 +83,12 @@ class Pet extends Component {
 						<TextField
 							id="Birthdate"
 							label="Birthdate"
+							type="date"
 							margin="normal"
-							value={this.state.birthdate}
+							InputLabelProps={{
+								shrink: true,
+							}}
+							value={this.state.birthddate}
 							onChange={this.handleChange('birthdate')}
 						/>
 						<Button onClick={this.handleSubmit}>Edit</Button>
