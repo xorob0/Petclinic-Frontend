@@ -95,7 +95,7 @@ class Pets extends Component {
     this.state = {
       rows: [],
     order: 'asc',
-    orderBy: 'firstname',
+    orderBy: 'name',
     };
   }
 
