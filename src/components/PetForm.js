@@ -92,7 +92,7 @@ class AddOwnerDialogButton extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen}>Open simple dialog</Button>
+        <Button onClick={this.handleClickOpen}>Add a pet</Button>
         <AddOwnerDialog
           open={this.state.open}
           onClose={this.handleClose}
