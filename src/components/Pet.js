@@ -34,6 +34,14 @@ class Owner extends Component {
 		alert(this.state.name + " was successfully edited");
 	}
 
+	handleDelete = (e) => {
+		const url = "http://localhost:9999/api/v1/petDelete?id=" + this.state.id;
+		console.log(url);
+		fetch(url);
+		// TODO better alert
+		alert(this.state.firstname + " was successfully deleted");
+	}
+
   handleOwner = (event) => {
 			this.props.history.push("/owner/" + this.state.ownerId);
   };
@@ -102,6 +110,7 @@ class Owner extends Component {
 						/>
 						<Button onClick={this.handleSubmit}>Edit</Button>
 						<Button onClick={this.handleOwner}>Owner</Button>
+						<Button onClick={this.handleDelete}>Delete pet</Button>
 				</Paper>
 
     );
