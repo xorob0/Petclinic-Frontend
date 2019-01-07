@@ -161,6 +161,10 @@ class Pets extends Component {
 
   }
 
+  handleClick = (event, id) => {
+		this.props.history.push("/pet/" + id);
+  };
+
   render() {
 
     const {  order, orderBy, rowsPerPage, page } = this.state;
