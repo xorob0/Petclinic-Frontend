@@ -39,7 +39,7 @@ class Owner extends Component {
 		console.log(url);
 		fetch(url);
 		// TODO better alert
-		alert(this.state.firstname + " was successfully deleted");
+		alert(this.state.name + " was successfully deleted");
 	}
 
   handleOwner = (event) => {
