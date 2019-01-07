@@ -171,13 +171,8 @@ class Pets extends Component {
                       tabIndex={-1}
                       key={n.id}
                     >
-                      <TableCell padding="checkbox">
-                      </TableCell>
-                      <TableCell component="th" scope="row" padding="none">
-                        {n.name}
-                      </TableCell>
-                      <TableCell numeric>{n.description}</TableCell>
-                      <TableCell numeric>{n.date}</TableCell>
+                      <TableCell>{n.description}</TableCell>
+                      <TableCell>{n.date}</TableCell>
                     </TableRow>
                   );
                 })}

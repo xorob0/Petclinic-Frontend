@@ -23,6 +23,7 @@ import Visit from '../components/Visit.js';
 import PetForm from '../components/PetForm.js';
 import VisitForm from '../components/VisitForm.js';
 import PetSVisits from '../components/PetSVisits.js';
+import VetSVisits from '../components/VetSVisits.js';
 
 const styles = theme => ({
   '@global': {
@@ -116,6 +117,7 @@ function Page(props) {
   <Route path='/Pet/:id' component={VisitForm}/>
   <Route path='/Vet/:id' component={Vet}/>
   <Route path='/Visit/:id' component={Visit}/>
+  <Route path='/Vet/:id' component={VetSVisits}/>
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>
