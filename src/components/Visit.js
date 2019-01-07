@@ -3,7 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-class Owner extends Component {
+class Visit extends Component {
   constructor() {
     super();
     this.state = {
@@ -54,20 +54,6 @@ class Owner extends Component {
         that.setState({ phone: data[0].telephone });
         that.setState({ id: data[0].id });
       });
-
-    // const urlPets = "http://localhost:9999/api/v1/pets?ownerId=" + this.props.match.params.id;
-
-    // fetch(urlPets)
-    //   .then(function(response) {
-    //     if (response.status >= 400) {
-    //       throw new Error("Bad response from server");
-    //     }
-    //     return response.json();
-    //   })
-    //   .then(function(data) {
-				// console.log(data);
-    //     this.setState({ rows: data });
-    //   });
   }
 
   render() {
@@ -117,5 +103,5 @@ class Owner extends Component {
   }
 }
 
-export default Owner;
+export default Visit;
 
