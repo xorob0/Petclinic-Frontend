@@ -17,6 +17,9 @@ import Owners from '../components/Owners.js';
 import Owner from '../components/Owner.js';
 import OwnerSPets from '../components/OwnerSPets.js';
 import OwnerForm from '../components/OwnerForm.js';
+import Pet from '../components/Pet.js';
+import Vet from '../components/Vet.js';
+import Visit from '../components/Visit.js';
 
 const styles = theme => ({
   '@global': {
@@ -104,6 +107,9 @@ function Page(props) {
   <Route path='/Owners' component={OwnerForm}/>
   <Route path='/Owner/:id' component={Owner}/>
 	<Route path='/Owner/:id' component={OwnerSPets}/>
+  <Route path='/Pet/:id' component={Pet}/>
+  <Route path='/Vet/:id' component={Vet}/>
+  <Route path='/Visit/:id' component={Visit}/>
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>

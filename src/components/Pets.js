@@ -164,6 +164,14 @@ class Pets extends Component {
 
   }
 
+  handleClick = (event, id) => {
+		console.log(event.target.attributes.class);
+		if(event.target.attributes.class.nodeValue.indexOf('MuiButton') >= 0)
+			this.props.history.push("/owner/" + id);
+		else
+			this.props.history.push("/pet/" + id);
+  };
+
   render() {
 
     const {  order, orderBy, rowsPerPage, page } = this.state;
@@ -192,7 +200,7 @@ class Pets extends Component {
                       <TableCell component="th" scope="row" padding="dense">{n.type}</TableCell>
                       <TableCell component="th" scope="row" padding="dense">{n.birthdate}</TableCell>
 											<TableCell component="th" scope="row" padding="dense">
-												<Button component={Link} to={"/owner/" + n.ownerId}>
+												<Button>
 													Owner
 												</Button>
 											</TableCell>

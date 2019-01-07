@@ -123,6 +123,10 @@ class Vets extends Component {
     this.setState({ rowsPerPage: event.target.value });
   };
 
+  handleClick = (event, id) => {
+		this.props.history.push("/vet/" + id);
+  };
+
   componentWillMount() {
     var that = this;
     const url = "http://localhost:9999/api/v1/vets";
