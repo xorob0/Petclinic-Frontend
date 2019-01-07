@@ -30,7 +30,6 @@ class AddOwnerDialog extends React.Component {
 	handleSubmit = (e) => {
 		const url = "http://localhost:9999/api/v1/visitInsert?date=" + this.state.date + "&description=" + this.state.description + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
 		//TODO date picker
-		//TODO vetid
 		console.log(url);
 		fetch(url);
 		alert(this.state.description + " was successfully added to the database");
@@ -69,7 +68,12 @@ class AddOwnerDialog extends React.Component {
 						<TextField
 							id="Date"
 							label="Date"
+							type="date"
 							margin="normal"
+							defaultValue="2017-05-24"
+							InputLabelProps={{
+								shrink: true,
+							}}
 							value={this.state.date}
 							onChange={this.handleChange('date')}
 						/>
