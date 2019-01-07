@@ -29,7 +29,8 @@ class Owner extends Component {
 
 	handleSubmit = (e) => {
 		// TODO working edit
-		const url = "http://localhost:9999/api/v1/ownerEdit?id=" + this.state.id + "lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		const url = "http://localhost:9999/api/v1/ownerUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully edited");
@@ -78,7 +79,6 @@ class Owner extends Component {
   render() {
     return (
 			<Paper>
-					<form onSubmit={this.handleSubmit}>
 						<TextField
 							id="Firstname"
 							label="Firstname"
@@ -114,8 +114,7 @@ class Owner extends Component {
 							value={this.state.telephone}
 							onChange={this.handleChange('phone')}
 						/>
-						<Button>Add</Button>
-					</form>
+						<Button onClick={this.handleSubmit}>Edit</Button>
 				</Paper>
 
     );
