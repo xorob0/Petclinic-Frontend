@@ -81,7 +81,7 @@ class Owner extends Component {
 							value={this.state.speciality}
 							onChange={this.handleChange('speciality')}
 						/>
-						<Button>Add</Button>
+						<Button onClick={handleSubmit}>Edit</Button>
 					</form>
 				</Paper>
     );
