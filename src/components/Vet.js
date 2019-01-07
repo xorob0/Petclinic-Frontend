@@ -15,7 +15,7 @@ class Owner extends Component {
     rows: [],
 		firstname: "",
 		lastname: "",
-		Speciality: "",
+		speciality: "",
     };
   }
   handleChange = name => event => {
@@ -26,7 +26,8 @@ class Owner extends Component {
 
 	handleSubmit = (e) => {
 		// TODO working edit
-		const url = "http://localhost:9999/api/v1/ownerEdit?id=" + this.state.id + "lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		const url = "http://localhost:9999/api/v1/vetUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&speciality=" + this.state.speciality;
+		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully edited");
