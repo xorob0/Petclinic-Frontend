@@ -97,8 +97,6 @@ class Pets extends Component {
       rows: [],
     order: 'asc',
     orderBy: 'firstname',
-    page: 0,
-    rowsPerPage: 5,
     };
   }
 
@@ -116,17 +114,7 @@ class Pets extends Component {
   handleClick = (event, id) => {
   };
 
-  handleChangePage = (event, page) => {
-    this.setState({ page });
-  };
-
-  handleChangeRowsPerPage = event => {
-    this.setState({ rowsPerPage: event.target.value });
-  };
-
-
   getOwner(id) {
-    var that = this;
     const url = "http://localhost:9999/api/v1/owners?id=" + id;
 
     fetch(url)
@@ -167,8 +155,7 @@ class Pets extends Component {
 
   render() {
 
-    const {  order, orderBy, rowsPerPage, page } = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const {  order, orderBy } = this.state;
     return (
       <Paper>
         <Table>

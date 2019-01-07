@@ -96,8 +96,6 @@ class Vets extends Component {
       rows: [],
     order: 'asc',
     orderBy: 'firstname',
-    page: 0,
-    rowsPerPage: 5,
     };
   }
 
@@ -113,14 +111,6 @@ class Vets extends Component {
   };
 
   handleClick = (event, id) => {
-  };
-
-  handleChangePage = (event, page) => {
-    this.setState({ page });
-  };
-
-  handleChangeRowsPerPage = event => {
-    this.setState({ rowsPerPage: event.target.value });
   };
 
   handleClick = (event, id) => {
@@ -145,8 +135,7 @@ class Vets extends Component {
 
   render() {
 
-    const {  order, orderBy, rowsPerPage, page } = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const {  order, orderBy } = this.state;
     return (
       <Paper>
         <Table>

@@ -9,9 +9,6 @@ import PropTypes from 'prop-types';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
-
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -99,8 +96,6 @@ class Pets extends Component {
       rows: [],
     order: 'asc',
     orderBy: 'firstname',
-    page: 0,
-    rowsPerPage: 5,
     };
   }
 
@@ -116,14 +111,6 @@ class Pets extends Component {
   };
 
   handleClick = (event, id) => {
-  };
-
-  handleChangePage = (event, page) => {
-    this.setState({ page });
-  };
-
-  handleChangeRowsPerPage = event => {
-    this.setState({ rowsPerPage: event.target.value });
   };
 
   async componentDidMount() {
@@ -152,8 +139,7 @@ class Pets extends Component {
 
   render() {
 
-    const {  order, orderBy, rowsPerPage, page } = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const {  order, orderBy } = this.state;
     return (
       <Paper>
         <Table>

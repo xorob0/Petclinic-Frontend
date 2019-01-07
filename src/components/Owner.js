@@ -1,9 +1,4 @@
 import React, { Component } from "react";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -29,7 +24,6 @@ class Owner extends Component {
 
 	handleSubmit = (e) => {
 		const url = "http://localhost:9999/api/v1/ownerUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
-		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully edited");
@@ -37,7 +31,6 @@ class Owner extends Component {
 
 	handleDelete = (e) => {
 		const url = "http://localhost:9999/api/v1/ownerDelete?id=" + this.state.id;
-		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully deleted");
@@ -59,7 +52,6 @@ class Owner extends Component {
         return response.json();
       })
       .then(function(data) {
-		console.log(data);
         that.setState({ firstname: data[0].firstname });
         that.setState({ lastname: data[0].lastname });
         that.setState({ city: data[0].city });
@@ -67,20 +59,6 @@ class Owner extends Component {
         that.setState({ phone: data[0].telephone });
         that.setState({ id: data[0].id });
       });
-
-    // const urlPets = "http://localhost:9999/api/v1/pets?ownerId=" + this.props.match.params.id;
-
-    // fetch(urlPets)
-    //   .then(function(response) {
-    //     if (response.status >= 400) {
-    //       throw new Error("Bad response from server");
-    //     }
-    //     return response.json();
-    //   })
-    //   .then(function(data) {
-				// console.log(data);
-    //     this.setState({ rows: data });
-    //   });
   }
 
   render() {
