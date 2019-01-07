@@ -11,6 +11,8 @@ class Visit extends Component {
 		date: "",
 		description: "",
 		id: 0,
+		petId: 0,
+		vetId: 0,
     };
   }
 
@@ -28,6 +30,12 @@ class Visit extends Component {
 		alert(this.state.description + " was successfully edited");
 	}
 
+  handlePet = (event) => {
+			this.props.history.push("/pet/" + this.state.petId);
+  };
+  handleVet = (event) => {
+			this.props.history.push("/vet/" + this.state.vetId);
+  };
 
   componentWillMount() {
 
@@ -47,6 +55,9 @@ class Visit extends Component {
 		console.log(data);
         that.setState({ date: data[0].date });
         that.setState({ description: data[0].description });
+        that.setState({ id: data[0].id });
+        that.setState({ vetId: data[0].vetId });
+        that.setState({ petId: data[0].petId });
       });
   }
 
@@ -73,7 +84,9 @@ class Visit extends Component {
 							value={this.state.description}
 							onChange={this.handleChange('description')}
 						/>
-						<Button>Add</Button>
+						<Button>Edit</Button>
+						<Button onClick={this.handlePet}>Pet</Button>
+						<Button onClick={this.handleVet}>Vet</Button>
 					</form>
 				</Paper>
 
