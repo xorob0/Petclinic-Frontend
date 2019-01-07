@@ -40,7 +40,6 @@ const rows = [
   { id: 'name', label: 'Name' },
   { id: 'type', label: 'Type' },
   { id: 'birthdate', label: 'Birthdate' },
-  { id: 'owner', label: 'Owner' },
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -127,23 +126,6 @@ class Pets extends Component {
     this.setState({ rowsPerPage: event.target.value });
   };
 
-
-  getOwner(id) {
-    var that = this;
-    const url = "http://localhost:9999/api/v1/owners?id=" + id;
-
-    fetch(url)
-      .then(function(response) {
-        if (response.status >= 400) {
-          throw new Error("Bad response from server");
-        }
-        return response.json();
-      })
-      .then(function(data) {
-				return data[0].firstname
-      });
-  }
-
   async componentDidMount() {
     var that = this;
     const url = "http://localhost:9999/api/v1/pets";
@@ -165,10 +147,6 @@ class Pets extends Component {
   }
 
   handleClick = (event, id) => {
-		console.log(event.target.attributes.class);
-		if(event.target.attributes.class.nodeValue.indexOf('MuiButton') >= 0)
-			this.props.history.push("/owner/" + id);
-		else
 			this.props.history.push("/pet/" + id);
   };
 
@@ -200,9 +178,6 @@ class Pets extends Component {
                       <TableCell component="th" scope="row" padding="dense">{n.type}</TableCell>
                       <TableCell component="th" scope="row" padding="dense">{n.birthdate}</TableCell>
 											<TableCell component="th" scope="row" padding="dense">
-												<Button>
-													Owner
-												</Button>
 											</TableCell>
                     </TableRow>
                   );
