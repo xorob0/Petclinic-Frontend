@@ -90,4 +90,3 @@ class Owner extends Component {
 }
 
 export default Owner;
-
