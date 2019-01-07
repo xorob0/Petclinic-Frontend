@@ -34,9 +34,9 @@ function getSorting(order, orderBy) {
 }
 
 const rows = [
-  { id: 'firstname', numeric: false, disablePadding: true, label: 'Firstname' },
-  { id: 'lastname', numeric: true, disablePadding: false, label: 'Lastname' },
-  { id: 'speciality', numeric: true, disablePadding: false, label: 'Speciality' },
+  { id: 'firstname', label: 'Firstname' },
+  { id: 'lastname', label: 'Lastname' },
+  { id: 'speciality', label: 'Speciality' },
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -56,13 +56,13 @@ class EnhancedTableHead extends React.Component {
             return (
               <TableCell
                 key={row.id}
-                numeric={row.numeric}
-                padding={row.disablePadding ? 'none' : 'default'}
+								align="left"
+								padding="dense"
                 sortDirection={orderBy === row.id ? order : false}
               >
                 <Tooltip
                   title="Sort"
-                  placement={row.numeric ? 'bottom-end' : 'bottom-start'}
+                  placement='bottom-start'
                   enterDelay={300}
                 >
                   <TableSortLabel
@@ -159,7 +159,6 @@ class Vets extends Component {
                     <TableRow
                       hover
                       onClick={event => this.handleClick(event, n.id)}
-                      role="checkbox"
                       tabIndex={-1}
                       key={n.id}
                     >
@@ -168,8 +167,8 @@ class Vets extends Component {
                       <TableCell component="th" scope="row" padding="none">
                         {n.firstname}
                       </TableCell>
-                      <TableCell numeric>{n.lastname}</TableCell>
-                      <TableCell numeric>{n.speciality}</TableCell>
+                      <TableCell component="th" scope="row" padding="none">{n.lastname}</TableCell>
+                      <TableCell component="th" scope="row" padding="none">{n.speciality}</TableCell>
                     </TableRow>
                   );
                 })}

@@ -37,10 +37,10 @@ function getSorting(order, orderBy) {
 }
 
 const rows = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
-  { id: 'type', numeric: false, disablePadding: true, label: 'Type' },
-  { id: 'birthdate', numeric: true, disablePadding: false, label: 'Birthdate' },
-  { id: 'owner', numeric: true, disablePadding: false, label: 'Owner' },
+  { id: 'name', label: 'Name' },
+  { id: 'type', label: 'Type' },
+  { id: 'birthdate', label: 'Birthdate' },
+  { id: 'owner', label: 'Owner' },
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -60,13 +60,13 @@ class EnhancedTableHead extends React.Component {
             return (
               <TableCell
                 key={row.id}
-                numeric={row.numeric}
-                padding={row.disablePadding ? 'none' : 'default'}
+								align="left"
+								padding="dense"
                 sortDirection={orderBy === row.id ? order : false}
               >
                 <Tooltip
                   title="Sort"
-                  placement={row.numeric ? 'bottom-end' : 'bottom-start'}
+                  placement='bottom-start'
                   enterDelay={300}
                 >
                   <TableSortLabel
@@ -184,18 +184,14 @@ class Pets extends Component {
                     <TableRow
                       hover
                       onClick={event => this.handleClick(event, n.id)}
-                      role="checkbox"
                       tabIndex={-1}
                       key={n.id}
                     >
-                      <TableCell padding="checkbox">
-                      </TableCell>
-                      <TableCell component="th" scope="row" padding="none">
-                        {n.name}
-                      </TableCell>
-                      <TableCell numeric>{n.type}</TableCell>
-                      <TableCell numeric>{n.birthdate}</TableCell>
-											<TableCell numeric>
+                      <TableCell component="th" scope="row" padding="dense"></TableCell>
+                      <TableCell component="th" scope="row" padding="dense"> {n.name} </TableCell>
+                      <TableCell component="th" scope="row" padding="dense">{n.type}</TableCell>
+                      <TableCell component="th" scope="row" padding="dense">{n.birthdate}</TableCell>
+											<TableCell component="th" scope="row" padding="dense">
 												<Button component={Link} to={"/owner/" + n.ownerId}>
 													Owner
 												</Button>
