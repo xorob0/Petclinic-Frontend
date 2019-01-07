@@ -89,7 +89,7 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 };
 
-class Pets extends Component {
+class OwnersSPets extends Component {
   constructor() {
     super();
     this.state = {
@@ -192,4 +192,4 @@ class Pets extends Component {
   }
 }
 
-export default Pets;
+export default OwnersSPets;

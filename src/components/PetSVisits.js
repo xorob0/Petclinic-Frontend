@@ -88,7 +88,7 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 };
 
-class Pets extends Component {
+class PetSVisits extends Component {
   constructor() {
     super();
     this.state = {
@@ -171,6 +171,7 @@ class Pets extends Component {
                       tabIndex={-1}
                       key={n.id}
                     >
+                      <TableCell></TableCell>
                       <TableCell>{n.description}</TableCell>
                       <TableCell>{n.date}</TableCell>
                     </TableRow>
@@ -183,4 +184,4 @@ class Pets extends Component {
   }
 }
 
-export default Pets;
+export default PetSVisits;

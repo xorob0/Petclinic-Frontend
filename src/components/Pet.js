@@ -3,7 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-class Owner extends Component {
+class Pet extends Component {
   constructor() {
     super();
     this.state = {
@@ -96,5 +96,5 @@ class Owner extends Component {
   }
 }
 
-export default Owner;
+export default Pet;
 

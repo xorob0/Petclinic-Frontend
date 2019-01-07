@@ -4,7 +4,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
 
-class AddOwnerDialog extends React.Component {
+class PetFormDialog extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -78,7 +78,7 @@ class AddOwnerDialog extends React.Component {
   }
 }
 
-class AddOwnerDialogButton extends React.Component {
+class AddPetButton extends React.Component {
   state = {
     open: false,
   };
@@ -97,7 +97,7 @@ class AddOwnerDialogButton extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClickOpen}>Add a pet</Button>
-        <AddOwnerDialog
+        <PetFormDialog
           open={this.state.open}
           onClose={this.handleClose}
 					ownerId={this.props.match.params.id}
@@ -107,4 +107,4 @@ class AddOwnerDialogButton extends React.Component {
   }
 }
 
-export default AddOwnerDialogButton;
+export default AddPetButton;
