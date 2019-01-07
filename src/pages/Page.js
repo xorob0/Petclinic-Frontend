@@ -20,6 +20,7 @@ import OwnerForm from '../components/OwnerForm.js';
 import Pet from '../components/Pet.js';
 import Vet from '../components/Vet.js';
 import Visit from '../components/Visit.js';
+import PetForm from '../components/PetForm.js';
 
 const styles = theme => ({
   '@global': {
@@ -107,6 +108,7 @@ function Page(props) {
   <Route path='/Owners' component={OwnerForm}/>
   <Route path='/Owner/:id' component={Owner}/>
 	<Route path='/Owner/:id' component={OwnerSPets}/>
+	<Route path='/Owner/:id' component={PetForm}/>
   <Route path='/Pet/:id' component={Pet}/>
   <Route path='/Vet/:id' component={Vet}/>
   <Route path='/Visit/:id' component={Visit}/>
