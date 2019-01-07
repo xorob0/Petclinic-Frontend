@@ -33,6 +33,13 @@ class Owner extends Component {
 		alert(this.state.firstname + " was successfully edited");
 	}
 
+	handleDelete = (e) => {
+		const url = "http://localhost:9999/api/v1/vetDelete?id=" + this.state.id;
+		fetch(url);
+		// TODO better alert
+		alert(this.state.firstname + " was successfully deleted");
+	}
+
 
   componentWillMount() {
 
@@ -83,6 +90,7 @@ class Owner extends Component {
 							onChange={this.handleChange('speciality')}
 						/>
 						<Button onClick={this.handleSubmit}>Edit</Button>
+						<Button onClick={this.handleDelete}>Delete Vet</Button>
 					</form>
 				</Paper>
     );
