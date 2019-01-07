@@ -28,7 +28,7 @@ class AddOwnerDialog extends React.Component {
   };
 
 	handleSubmit = (e) => {
-		const url = "http://localhost:9999/api/v1/visitInsert?date=" + this.state.date + "&description=" + this.state.description + "&petId=" + this.state.petId + "&vetId=" + 1;
+		const url = "http://localhost:9999/api/v1/visitInsert?date=" + this.state.date + "&description=" + this.state.description + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
 		//TODO date picker
 		//TODO vetid
 		console.log(url);
