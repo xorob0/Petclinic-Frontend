@@ -20,6 +20,21 @@ class Owner extends Component {
     };
   }
 
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
+	handleSubmit = (e) => {
+		// TODO working edit
+		const url = "http://localhost:9999/api/v1/ownerEdit?id=" + this.state.id + "lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		fetch(url);
+		// TODO better alert
+		alert(this.state.firstname + " was successfully edited");
+	}
+
+
   componentWillMount() {
 
 
@@ -67,30 +82,35 @@ class Owner extends Component {
 							label="Firstname"
 							margin="normal"
 							value={this.state.firstname}
+							onChange={this.handleChange('firstname')}
 						/>
 						<TextField
 							id="Lastname"
 							label="Lastname"
 							margin="normal"
 							value={this.state.lastname}
+							onChange={this.handleChange('lastname')}
 						/>
 						<TextField
 							id="Address"
 							label="Address"
 							margin="normal"
 							value={this.state.address}
+							onChange={this.handleChange('address')}
 						/>
 						<TextField
 							id="City"
 							label="City"
 							margin="normal"
 							value={this.state.city}
+							onChange={this.handleChange('city')}
 						/>
 						<TextField
 							id="Phone"
 							label="Phone"
 							margin="normal"
 							value={this.state.telephone}
+							onChange={this.handleChange('phone')}
 						/>
 				</Paper>
 
