@@ -8,11 +8,9 @@ class Visit extends Component {
     super();
     this.state = {
     rows: [],
-		firstname: "",
-		lastname: "",
-		city: "",
-		address: "",
-		phone: "",
+		date: "",
+		description: "",
+		id: 0,
     };
   }
 
@@ -24,10 +22,10 @@ class Visit extends Component {
 
 	handleSubmit = (e) => {
 		// TODO working edit
-		const url = "http://localhost:9999/api/v1/ownerEdit?id=" + this.state.id + "lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		const url = "http://localhost:9999/api/v1/visits?id=" + this.state.id + "description=" + this.state.description + "&date=" + this.state.date + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
 		fetch(url);
 		// TODO better alert
-		alert(this.state.firstname + " was successfully edited");
+		alert(this.state.description + " was successfully edited");
 	}
 
 
@@ -36,7 +34,7 @@ class Visit extends Component {
 
     var that = this;
 		
-    const url = "http://localhost:9999/api/v1/owners?id=" + this.props.match.params.id;
+    const url = "http://localhost:9999/api/v1/visit?id=" + this.props.match.params.id;
 
     fetch(url)
       .then(function(response) {
@@ -47,12 +45,8 @@ class Visit extends Component {
       })
       .then(function(data) {
 		console.log(data);
-        that.setState({ firstname: data[0].firstname });
-        that.setState({ lastname: data[0].lastname });
-        that.setState({ city: data[0].city });
-        that.setState({ address: data[0].address });
-        that.setState({ phone: data[0].telephone });
-        that.setState({ id: data[0].id });
+        that.setState({ date: data[0].date });
+        that.setState({ description: data[0].description });
       });
   }
 
@@ -61,39 +55,23 @@ class Visit extends Component {
 			<Paper>
 					<form onSubmit={this.handleSubmit}>
 						<TextField
-							id="Firstname"
-							label="Firstname"
+							id="Date"
+							label="Date"
+							type="date"
 							margin="normal"
-							value={this.state.firstname}
-							onChange={this.handleChange('firstname')}
+							defaultValue="2017-05-24"
+							InputLabelProps={{
+								shrink: true,
+							}}
+							value={this.state.date}
+							onChange={this.handleChange('date')}
 						/>
 						<TextField
-							id="Lastname"
-							label="Lastname"
+							id="Description"
+							label="Description"
 							margin="normal"
-							value={this.state.lastname}
-							onChange={this.handleChange('lastname')}
-						/>
-						<TextField
-							id="Address"
-							label="Address"
-							margin="normal"
-							value={this.state.address}
-							onChange={this.handleChange('address')}
-						/>
-						<TextField
-							id="City"
-							label="City"
-							margin="normal"
-							value={this.state.city}
-							onChange={this.handleChange('city')}
-						/>
-						<TextField
-							id="Phone"
-							label="Phone"
-							margin="normal"
-							value={this.state.telephone}
-							onChange={this.handleChange('phone')}
+							value={this.state.description}
+							onChange={this.handleChange('description')}
 						/>
 						<Button>Add</Button>
 					</form>
