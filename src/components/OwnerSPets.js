@@ -35,9 +35,8 @@ function getSorting(order, orderBy) {
 
 const rows = [
   { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
-  { id: 'type', numeric: false, disablePadding: true, label: 'Type' },
+  { id: 'type', numeric: true, disablePadding: false, label: 'Type' },
   { id: 'birthdate', numeric: true, disablePadding: false, label: 'Birthdate' },
-  { id: 'owner', numeric: true, disablePadding: false, label: 'Owner' },
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -96,7 +95,7 @@ class Pets extends Component {
     this.state = {
       rows: [],
     order: 'asc',
-    orderBy: 'firstname',
+    orderBy: 'name',
     };
   }
 
@@ -183,7 +182,6 @@ class Pets extends Component {
                       </TableCell>
                       <TableCell numeric>{n.type}</TableCell>
                       <TableCell numeric>{n.birthdate}</TableCell>
-											<TableCell numeric>{n.ownerId}</TableCell>
                     </TableRow>
                   );
                 })}
