@@ -24,7 +24,7 @@ class Visit extends Component {
 
 	handleSubmit = (e) => {
 		// TODO working edit
-		const url = "http://localhost:9999/api/v1/visits?id=" + this.state.id + "description=" + this.state.description + "&date=" + this.state.date + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		const url = "http://localhost:9999/api/v1/visitsUpdate?id=" + this.state.id + "description=" + this.state.description + "&date=" + this.state.date + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
 		fetch(url);
 		// TODO better alert
 		alert(this.state.description + " was successfully edited");
