@@ -28,12 +28,19 @@ class Owner extends Component {
   };
 
 	handleSubmit = (e) => {
-		// TODO working edit
 		const url = "http://localhost:9999/api/v1/ownerUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
 		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully edited");
+	}
+
+	handleDelete = (e) => {
+		const url = "http://localhost:9999/api/v1/ownerDelete?id=" + this.state.id;
+		console.log(url);
+		fetch(url);
+		// TODO better alert
+		alert(this.state.firstname + " was successfully deleted");
 	}
 
 
@@ -115,6 +122,7 @@ class Owner extends Component {
 							onChange={this.handleChange('phone')}
 						/>
 						<Button onClick={this.handleSubmit}>Edit</Button>
+						<Button onClick={this.handleDelete}>Delete owner</Button>
 				</Paper>
 
     );
