@@ -97,7 +97,7 @@ class Owner extends Component {
 							id="Phone"
 							label="Phone"
 							margin="normal"
-							value={this.state.telephone}
+							value={this.state.phone}
 							onChange={this.handleChange('phone')}
 						/>
 						<Button onClick={this.handleSubmit}>Edit</Button>
