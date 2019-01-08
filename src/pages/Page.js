@@ -112,12 +112,14 @@ function Page(props) {
       </AppBar>
       <main className={classes.layout, classes.main}>
   <Route exact path='/' component={Vets}/>
+  <Route exact path='/' component={VetSearch}/>
+  <Route exact path='/' component={VetFrom}/>
+  <Route exact path='/' component={Vets}/>
   <Route path='/Vets' component={Vets}/>
   <Route path='/Vets' component={VetSearch}/>
   <Route path='/Vets' component={VetForm}/>
 	<Route path='/vetsSearch/:search' component={VetsSearched}/>
   <Route path='/Pets' component={Pets}/>
-  <Route path='/Pets' component={PetForm}/>
   <Route path='/Pets' component={PetSearch}/>
 	<Route path='/petsSearch/:search' component={PetsSearched}/>
   <Route path='/Owners' component={Owners}/>
