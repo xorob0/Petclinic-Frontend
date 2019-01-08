@@ -113,7 +113,7 @@ function Page(props) {
       <main className={classes.layout, classes.main}>
   <Route exact path='/' component={Vets}/>
   <Route exact path='/' component={VetSearch}/>
-  <Route exact path='/' component={VetFrom}/>
+  <Route exact path='/' component={VetForm}/>
   <Route exact path='/' component={Vets}/>
   <Route path='/Vets' component={Vets}/>
   <Route path='/Vets' component={VetSearch}/>
