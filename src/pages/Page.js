@@ -21,6 +21,7 @@ import Pet from '../components/Pet.js';
 import Vet from '../components/Vet.js';
 import Visit from '../components/Visit.js';
 import PetForm from '../components/PetForm.js';
+import VetForm from '../components/VetForm.js';
 import VisitForm from '../components/VisitForm.js';
 import PetSVisits from '../components/PetSVisits.js';
 import VetSVisits from '../components/VetSVisits.js';
@@ -113,8 +114,10 @@ function Page(props) {
   <Route exact path='/' component={Vets}/>
   <Route path='/Vets' component={Vets}/>
   <Route path='/Vets' component={VetSearch}/>
+  <Route path='/Vets' component={VetForm}/>
 	<Route path='/vetsSearch/:search' component={VetsSearched}/>
   <Route path='/Pets' component={Pets}/>
+  <Route path='/Pets' component={PetForm}/>
   <Route path='/Pets' component={PetSearch}/>
 	<Route path='/petsSearch/:search' component={PetsSearched}/>
   <Route path='/Owners' component={Owners}/>
