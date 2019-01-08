@@ -42,7 +42,7 @@ class Visit extends Component {
 
     var that = this;
 		
-    const url = "http://localhost:9999/api/v1/visit?id=" + this.props.match.params.id;
+    const url = "http://localhost:9999/api/v1/visits?id=" + this.props.match.params.id;
 
     fetch(url)
       .then(function(response) {
@@ -52,7 +52,6 @@ class Visit extends Component {
         return response.json();
       })
       .then(function(data) {
-		console.log(data);
         that.setState({ date: data[0].date });
         that.setState({ description: data[0].description });
         that.setState({ id: data[0].id });
