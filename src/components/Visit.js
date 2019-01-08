@@ -23,11 +23,15 @@ class Visit extends Component {
   };
 
 	handleSubmit = (e) => {
-		// TODO working edit
 		const url = "http://localhost:9999/api/v1/visitUpdate?id=" + this.state.id + "&description=" + this.state.description + "&date=" + this.state.date + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
 		fetch(url);
-		// TODO better alert
 		alert(this.state.description + " was successfully edited");
+	}
+
+	handleDelete = (e) => {
+		const url = "http://localhost:9999/api/v1/visitDelete?id=" + this.state.id;
+		fetch(url);
+		alert(this.state.description + " was successfully deleted");
 	}
 
   handlePet = (event) => {
@@ -83,6 +87,7 @@ class Visit extends Component {
 							onChange={this.handleChange('description')}
 						/>
 						<Button onClick={this.handleSubmit}>Edit</Button>
+						<Button onClick={this.handleDelete}>Delete visit</Button>
 						<Button onClick={this.handlePet}>Pet</Button>
 						<Button onClick={this.handleVet}>Vet</Button>
 				</Paper>
