@@ -128,6 +128,7 @@ function Page(props) {
   <Route path='/Pet/:id' component={PetSVisits}/>
   <Route path='/Pet/:id' component={VisitForm}/>
   <Route path='/Vet/:id' component={Vet}/>
+  <Route path='/Vet/:id' component={VetSVisits}/>
   <Route path='/Visit/:id' component={Visit}/>
       </main>
       {/* Footer */}
