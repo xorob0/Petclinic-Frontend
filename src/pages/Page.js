@@ -114,7 +114,6 @@ function Page(props) {
   <Route exact path='/' component={Vets}/>
   <Route exact path='/' component={VetSearch}/>
   <Route exact path='/' component={VetForm}/>
-  <Route exact path='/' component={Vets}/>
   <Route path='/Vets' component={Vets}/>
   <Route path='/Vets' component={VetSearch}/>
   <Route path='/Vets' component={VetForm}/>
