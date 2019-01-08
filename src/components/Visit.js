@@ -24,7 +24,8 @@ class Visit extends Component {
 
 	handleSubmit = (e) => {
 		// TODO working edit
-		const url = "http://localhost:9999/api/v1/visitsUpdate?id=" + this.state.id + "description=" + this.state.description + "&date=" + this.state.date + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
+		const url = "http://localhost:9999/api/v1/visitUpdate?id=" + this.state.id + "&description=" + this.state.description + "&date=" + this.state.date + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
+		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.description + " was successfully edited");
@@ -63,7 +64,6 @@ class Visit extends Component {
   render() {
     return (
 			<Paper>
-					<form onSubmit={this.handleSubmit}>
 						<TextField
 							id="Date"
 							label="Date"
@@ -83,10 +83,9 @@ class Visit extends Component {
 							value={this.state.description}
 							onChange={this.handleChange('description')}
 						/>
-						<Button>Edit</Button>
+						<Button onClick={this.handleSubmit}>Edit</Button>
 						<Button onClick={this.handlePet}>Pet</Button>
 						<Button onClick={this.handleVet}>Vet</Button>
-					</form>
 				</Paper>
 
     );
