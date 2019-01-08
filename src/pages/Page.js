@@ -24,6 +24,12 @@ import PetForm from '../components/PetForm.js';
 import VisitForm from '../components/VisitForm.js';
 import PetSVisits from '../components/PetSVisits.js';
 import VetSVisits from '../components/VetSVisits.js';
+import PetSearch from '../components/PetSearch.js';
+import VetSearch from '../components/VetSearch.js';
+import OwnerSearch from '../components/OwnerSearch.js';
+import PetsSearched from '../components/PetsSearched.js';
+import VetsSearched from '../components/VetsSearched.js';
+import OwnerSearched from '../components/OwnerSearched.js';
 
 const styles = theme => ({
   '@global': {
@@ -106,9 +112,15 @@ function Page(props) {
       <main className={classes.layout, classes.main}>
   <Route exact path='/' component={Vets}/>
   <Route path='/Vets' component={Vets}/>
+  <Route path='/Vets' component={VetSearch}/>
+	<Route path='/vetsSearch/:search' component={VetsSearched}/>
   <Route path='/Pets' component={Pets}/>
+  <Route path='/Pets' component={PetSearch}/>
+	<Route path='/petsSearch/:search' component={PetsSearched}/>
   <Route path='/Owners' component={Owners}/>
   <Route path='/Owners' component={OwnerForm}/>
+  <Route path='/Owners' component={OwnerSearch}/>
+	<Route path='/ownerSearch/:search' component={OwnerSearched}/>
   <Route path='/Owner/:id' component={Owner}/>
 	<Route path='/Owner/:id' component={OwnerSPets}/>
 	<Route path='/Owner/:id' component={PetForm}/>
@@ -117,7 +129,6 @@ function Page(props) {
   <Route path='/Pet/:id' component={VisitForm}/>
   <Route path='/Vet/:id' component={Vet}/>
   <Route path='/Visit/:id' component={Visit}/>
-  <Route path='/Vet/:id' component={VetSVisits}/>
       </main>
       {/* Footer */}
       <footer className={classNames(classes.footer, classes.layout)}>
