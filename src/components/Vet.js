@@ -22,7 +22,6 @@ class Vet extends Component {
 	handleSubmit = (e) => {
 		// TODO working edit
 		const url = "http://localhost:9999/api/v1/vetUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&speciality=" + this.state.speciality;
-		console.log(url);
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully edited");
@@ -42,7 +41,6 @@ class Vet extends Component {
     var that = this;
 		
     const url = "http://localhost:9999/api/v1/vets?id=" + this.props.match.params.id;
-		console.log(url);
 
     fetch(url)
       .then(function(response) {
@@ -52,7 +50,6 @@ class Vet extends Component {
         return response.json();
       })
       .then(function(data) {
-		console.log(data);
         that.setState({ firstname: data[0].firstname });
         that.setState({ lastname: data[0].lastname });
         that.setState({ speciality: data[0].speciality });

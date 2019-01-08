@@ -28,7 +28,6 @@ class AddOwnerDialog extends React.Component {
 
 	handleSubmit = (e) => {
 		const url = "http://localhost:9999/api/v1/visitInsert?date=" + this.state.date + "&description=" + this.state.description + "&petId=" + this.state.petId + "&vetId=" + this.state.vetId;
-		console.log(url);
 		fetch(url);
 		alert(this.state.description + " was successfully added to the database");
 	}

@@ -27,7 +27,6 @@ class PetFormDialog extends React.Component {
 
 	handleSubmit = (e) => {
 		const url = "http://localhost:9999/api/v1/petInsert?name=" + this.state.name + "&type=" + this.state.type + "&birthdate=" + this.state.birthdate + "&ownerId=" + this.state.ownerId;
-		console.log(url);
 		fetch(url);
 		alert(this.state.name + " was successfully added to the database");
 	}

@@ -126,7 +126,6 @@ class PetSVisits extends Component {
   async componentDidMount() {
     var that = this;
     const url = "http://localhost:9999/api/v1/visits?petId="+ this.props.match.params.id;
-		console.log(url);
 
     fetch(url)
       .then(function(response) {
