@@ -23,7 +23,7 @@ class Owner extends Component {
   };
 
 	handleSubmit = (e) => {
-		const url = "http://localhost:9999/api/v1/ownerUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.telephone;
+		const url = "http://localhost:9999/api/v1/ownerUpdate?id=" + this.state.id + "&lastname=" + this.state.lastname + "&firstname=" + this.state.firstname + "&address=" + this.state.address + "&city=" + this.state.city + "&telephone=" + this.state.phone;
 		fetch(url);
 		// TODO better alert
 		alert(this.state.firstname + " was successfully edited");
@@ -43,6 +43,7 @@ class Owner extends Component {
     var that = this;
 		
     const url = "http://localhost:9999/api/v1/owners?id=" + this.props.match.params.id;
+		console.log(url);
 
     fetch(url)
       .then(function(response) {
