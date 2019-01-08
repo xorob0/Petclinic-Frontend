@@ -110,8 +110,6 @@ class Vets extends Component {
     this.setState({ order, orderBy });
   };
 
-  handleClick = (event, id) => {
-  };
 
   handleClick = (event, id) => {
 		this.props.history.push("/vet/" + id);
